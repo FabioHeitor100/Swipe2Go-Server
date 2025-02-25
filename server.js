@@ -1,6 +1,7 @@
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({ port: 8080 });
+const PORT = process.env.PORT || 8080;
+const server = new WebSocket.Server({ port: PORT, host: '0.0.0.0' });
 let users = {};
 
 let userSessions = {}; // Store users and their partner's connection
